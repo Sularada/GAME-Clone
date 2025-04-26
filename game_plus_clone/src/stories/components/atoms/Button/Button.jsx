@@ -1,5 +1,9 @@
-const Button = () => {
-  return <div>Button</div>;
-};
+import Link from "next/link";
 
-export default Button;
+export const LinkButton = ({ href, classes, text }) => {
+  return (
+    <Link href={href} className={"link-btn fw-bold btn " + classes}>
+      {text}
+    </Link>
+  );
+};

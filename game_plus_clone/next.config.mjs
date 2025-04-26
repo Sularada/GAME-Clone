@@ -10,6 +10,11 @@ export default {
         hostname: "gameplus.com.tr",
         pathname: "/gameplus-static-resources/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "gameplus.com.tr",
+        pathname: "/static/media/**",
+      },
     ],
   },
 };

@@ -44,3 +44,24 @@ export async function getBannerSection() {
   const sections = results.flat();
   return sections;
 }
+export async function getSection(link) {
+  const docRef = doc(db, "sections", link);
+  const docSnap = await getDoc(docRef);
+  const section = docSnap.data();
+  return section;
+}
+
+export async function getNestedSection(main, arr) {
+  const promises = arr.map(async (item) => {
+    const q = query(collection(db, "/sections/" + main + "/" + item));
+    const querySnap = await getDocs(q);
+    return querySnap.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+  });
+
+  const results = await Promise.all(promises);
+  const sections = results.flat();
+  return sections;
+}

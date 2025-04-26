@@ -1,4 +1,5 @@
 "use client";
+import "./style.scss";
 import { useState } from "react";
 import OffcanvasButton from "../../atoms/Button/OffcanvasButton";
 import LogoLink from "../../molecules/LogoLink/LogoLink";
@@ -11,13 +12,13 @@ const Header = ({ navlinks, geforce, ubisoft }) => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   return (
-    <header>
-      <div className="py-3 my-1">
+    <header className="d-flex flex-column position-absolute position-lg-fixed top-0 left-0">
+      <div className="d-flex py-3 my-1">
         <OffcanvasButton className="d-lg-none" handleShow={handleShow} />{" "}
         <LogoLink />
       </div>
       <Offcanvas
-        className="off-canvas-menu"
+        className="off-canvas-menu h-100"
         responsive="lg"
         show={show}
         onHide={handleClose}

@@ -1,4 +1,8 @@
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 $off-canvas-menu-bg: #0d0d0d;
+* {
+  box-sizing: border-box;
+}
 .gap-35 {
   gap: 35px;
 }

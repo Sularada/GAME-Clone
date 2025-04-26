@@ -7,7 +7,7 @@ const NavLink = ({ navlink }) => {
       className="text-decoration-none text-secondary fw-semibold d-flex align-items-center gap-2"
       href={navlink.link}
     >
-      {getSvg(navlink.id)} {navlink.text}
+      {navlink.id && getSvg(navlink.id)} {navlink.text}
     </Link>
   );
 };

@@ -3,7 +3,7 @@ import { SwiperSlide } from "swiper/react";
 
 const Slide = ({ slide }) => {
   return (
-    <SwiperSlide>
+    <SwiperSlide spaceBetween={50}>
       <Image
         src={slide.src.trimStart()}
         alt={slide.alt}
