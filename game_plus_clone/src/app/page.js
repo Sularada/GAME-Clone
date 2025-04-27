@@ -1,4 +1,3 @@
-import "../styles/scss/main.scss";
 import {
   getBannerSection,
   getnavbarSection,
@@ -18,7 +17,8 @@ export default async function Home() {
     "faq",
     "service",
   ]);
-
+  const geForceSection = await getSection("geForceNowSection");
+  const gameCatalog = await getSection("gameCatalog");
   return (
     <GfnTemplate
       navlinks={navlinks}
@@ -28,6 +28,8 @@ export default async function Home() {
       gift={gift}
       dAndp={dAndp}
       info={info}
+      geForceSection={geForceSection}
+      gameCatalog={gameCatalog}
     />
   );
 }

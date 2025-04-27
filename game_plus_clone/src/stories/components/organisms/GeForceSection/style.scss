@@ -1,0 +1,25 @@
+.geForce-container {
+  flex-wrap: wrap;
+  .game-video {
+    top: 4%;
+    left: 23.3%;
+    width: 53.55%;
+    max-width: 100%;
+  }
+  h2 {
+    padding: 0;
+  }
+  .text-container {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
+  .geForce-container {
+    flex-wrap: nowrap;
+    .text-container {
+      max-width: 420px;
+      text-align: left !important;
+    }
+  }
+}

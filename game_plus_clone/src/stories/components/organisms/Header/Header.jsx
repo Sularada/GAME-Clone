@@ -12,13 +12,13 @@ const Header = ({ navlinks, geforce, ubisoft }) => {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   return (
-    <header className="d-flex flex-column position-absolute position-lg-fixed top-0 left-0">
+    <header className="d-flex flex-column position-absolute position-lg-fixed top-0 left-0 px-5 bg-dark">
       <div className="d-flex py-3 my-1">
         <OffcanvasButton className="d-lg-none" handleShow={handleShow} />{" "}
         <LogoLink />
       </div>
       <Offcanvas
-        className="off-canvas-menu h-100"
+        className="off-canvas-menu h-100 bg-dark"
         responsive="lg"
         show={show}
         onHide={handleClose}

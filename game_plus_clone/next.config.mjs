@@ -13,7 +13,7 @@ export default {
       {
         protocol: "https",
         hostname: "gameplus.com.tr",
-        pathname: "/static/media/**",
+        pathname: "/**",
       },
     ],
   },

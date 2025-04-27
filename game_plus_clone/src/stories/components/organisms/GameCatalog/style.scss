@@ -1,0 +1,35 @@
+.catalog {
+  margin-bottom: 55px;
+  .catalog-container {
+    .slider-1 {
+      background-image: url("https://gameplus.com.tr/static/media/backgroundImage1.f012df10.webp");
+      animation: slideAppsMobile 50s linear infinite;
+    }
+    .slider-2 {
+      background-image: url("https://gameplus.com.tr/static/media/backgroundImage2.5609d77a.webp");
+      animation: slideAppsMobile 60s linear infinite;
+    }
+    .slider-3 {
+      background-image: url("https://gameplus.com.tr/static/media/backgroundImage3.2bec175a.webp");
+      animation: slideAppsMobile 70s linear infinite;
+    }
+    .slider-1,
+    .slider-2,
+    .slider-3 {
+      margin-bottom: 16px;
+      background-color: initial;
+      background-position: 0;
+      background-repeat: repeat-x;
+      width: 7525px;
+      height: 160px;
+    }
+  }
+}
+@keyframes slideAppsMobile {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -100%;
+  }
+}
