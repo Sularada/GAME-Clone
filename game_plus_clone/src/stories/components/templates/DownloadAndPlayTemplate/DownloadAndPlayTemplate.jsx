@@ -8,21 +8,25 @@ import DownloadTitle from "../../molecules/DownloadTitle/DownloadTitle";
 import AccordionContainer from "../../organisms/AccordionContainer/AccordionContainer";
 import Header from "../../organisms/Header/Header";
 import "./style.scss";
+import InfoContainer from "../../organisms/InfoContainer/InfoContainer";
+import LibrarySection from "../../organisms/LibrarySection/LibrarySection";
+import Footer from "../../organisms/Footer/Footer";
 
 const DownloadAndPlayTemplate = ({
   navlinks,
   geforce,
   ubisoft,
   downloadOptions,
+  info,
 }) => {
   return (
-    <div className=" position-relative ">
-      <Header navlinks={navlinks} geforce={geforce} ubisoft={ubisoft} />
-      <main className="position-absolute ms-5">
-        <DownloadTitle />
-        <AccordionContainer data={downloadOptions} />
-      </main>
-    </div>
+    <main className="position-absolute ms-0 ms-lg-5">
+      <DownloadTitle />
+      <AccordionContainer data={downloadOptions} />
+      <InfoContainer data={info} />
+      <LibrarySection />
+      <Footer />
+    </main>
   );
 };
 

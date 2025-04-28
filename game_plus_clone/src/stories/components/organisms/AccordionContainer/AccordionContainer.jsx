@@ -4,7 +4,7 @@ import AccordionItemComp from "../../molecules/AccordionItem/AccordionItem";
 
 const AccordionContainer = ({ data }) => {
   return (
-    <Accordion className="accordion-dark" defaultActiveKey="0">
+    <Accordion className="accordion-dark mb-5" defaultActiveKey="0">
       {data.map((item, index) => {
         console.log(item.links);
         return (

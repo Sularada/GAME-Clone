@@ -1,5 +1,8 @@
 import DownloadAndPlayTemplate from "@/stories/components/templates/DownloadAndPlayTemplate/DownloadAndPlayTemplate";
-import { getnavbarSection } from "../../../firebase/dbController";
+import {
+  getnavbarSection,
+  getNestedSection,
+} from "../../../firebase/dbController";
 
 export default async function Home() {
   const navlinks = await getnavbarSection("navlinks");
@@ -135,6 +138,11 @@ export default async function Home() {
       ],
     },
   ];
+  const info = await getNestedSection("infoSection", [
+    "system",
+    "faq",
+    "service",
+  ]);
 
   return (
     <DownloadAndPlayTemplate
@@ -142,6 +150,7 @@ export default async function Home() {
       geforce={geforce}
       ubisoft={ubisoft}
       downloadOptions={downloadOptions}
+      info={info}
     />
   );
 }

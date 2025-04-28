@@ -21,19 +21,16 @@ const GfnTemplate = ({
   gameCatalog,
 }) => {
   return (
-    <div className=" position-relative ">
-      <Header navlinks={navlinks} geforce={geforce} ubisoft={ubisoft} />
-      <main className="position-absolute ms-5">
-        <Slider slides={banner}></Slider>
-        <Gift data={gift} line="line" />
-        <DownloadAndPlay data={dAndp} />
-        <InfoContainer data={info} />
-        <GeForceSection data={geForceSection} />
-        <GameCatalog data={gameCatalog} />
-        <BuySection />
-        <Footer />
-      </main>
-    </div>
+    <main className="position-absolute ms-0 ms-lg-5">
+      <Slider slides={banner}></Slider>
+      <Gift data={gift} line="line" />
+      <DownloadAndPlay data={dAndp} />
+      <InfoContainer data={info} />
+      <GeForceSection data={geForceSection} />
+      <GameCatalog data={gameCatalog} />
+      <BuySection />
+      <Footer />
+    </main>
   );
 };
 

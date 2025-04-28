@@ -53,3 +53,15 @@ $off-canvas-menu-bg: #0d0d0d;
   height: 100%;
   object-fit: cover;
 }
+main {
+  left: 0;
+  right: 0;
+  padding-top: 93px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @media (min-width: 1024px) {
+    left: 200px;
+    padding: 0 20px;
+    height: 100vh;
+  }
+}
