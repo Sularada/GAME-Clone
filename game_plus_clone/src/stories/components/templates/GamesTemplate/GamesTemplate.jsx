@@ -1,10 +1,12 @@
 import FilterOffcanvas from "../../organisms/FilterOffcanvas/FilterOffcanvas";
+import GamesContainer from "../../organisms/GamesContainer/GamesContainer";
 
-const GamesTemplate = () => {
+const GamesTemplate = ({ games }) => {
   return (
-    <main className="position-absolute ms-0 ms-lg-5">
+    <div className="d-flex mt-4">
       <FilterOffcanvas />
-    </main>
+      <GamesContainer games={games} />
+    </div>
   );
 };
 

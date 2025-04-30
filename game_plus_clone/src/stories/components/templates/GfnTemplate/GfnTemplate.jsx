@@ -18,7 +18,7 @@ const GfnTemplate = ({
   gameCatalog,
 }) => {
   return (
-    <main className="position-absolute ms-0 ms-lg-5">
+    <>
       <Slider slides={banner}></Slider>
       <Gift data={gift} line="line" />
       <DownloadAndPlay data={dAndp} />
@@ -28,7 +28,7 @@ const GfnTemplate = ({
       <PackagesSection />
       <BuySection />
       <Footer />
-    </main>
+    </>
   );
 };
 

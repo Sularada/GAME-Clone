@@ -40,8 +40,6 @@ $off-canvas-menu-bg: #0d0d0d;
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,9 +54,10 @@ $off-canvas-menu-bg: #0d0d0d;
 main {
   left: 0;
   right: 0;
-  padding-top: 93px;
+  top: 0;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding-top: 93px;
   @media (min-width: 1024px) {
     left: 200px;
     padding: 0 20px;

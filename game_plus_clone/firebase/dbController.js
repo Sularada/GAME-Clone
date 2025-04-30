@@ -72,5 +72,6 @@ export async function getGames() {
     id: doc.id,
     ...doc.data(),
   }));
+  console.log(games);
   return games;
 }

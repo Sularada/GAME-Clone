@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/scss/main.scss";
 import { getnavbarSection } from "../../firebase/dbController";
 import Header from "@/stories/components/organisms/Header/Header";
+import Navbar from "@/stories/components/molecules/Navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,11 @@ export default async function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} bg-black`}>
         <div className=" position-relative ">
           <Header navlinks={navlinks} geforce={geforce} ubisoft={ubisoft} />
-          {children}
+
+          <main className="position-absolute ms-0 ms-lg-5">
+            <Navbar />
+            {children}
+          </main>
         </div>
       </body>
     </html>

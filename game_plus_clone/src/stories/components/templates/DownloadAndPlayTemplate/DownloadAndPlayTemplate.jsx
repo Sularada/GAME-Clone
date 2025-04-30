@@ -20,13 +20,13 @@ const DownloadAndPlayTemplate = ({
   info,
 }) => {
   return (
-    <main className="position-absolute ms-0 ms-lg-5">
+    <>
       <DownloadTitle />
       <AccordionContainer data={downloadOptions} />
       <InfoContainer data={info} />
       <LibrarySection />
       <Footer />
-    </main>
+    </>
   );
 };
 

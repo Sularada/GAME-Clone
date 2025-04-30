@@ -2,6 +2,6 @@ import GamesTemplate from "@/stories/components/templates/GamesTemplate/GamesTem
 import { getGames } from "../../../firebase/dbController";
 
 export default async function Home() {
-  getGames();
-  return <GamesTemplate />;
+  const games = await getGames();
+  return <GamesTemplate games={games} />;
 }

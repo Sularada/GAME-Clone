@@ -10,7 +10,7 @@ import WhatGeforce from "../../organisms/WhatGeforce/WhatGeforce";
 
 const GeforceNowTemplate = () => {
   return (
-    <main className="position-absolute ms-0 ms-lg-5">
+    <>
       <WhatGeforce />
       <GeforceIframe />
       <GeforceHowWork />
@@ -20,7 +20,7 @@ const GeforceNowTemplate = () => {
       <InfoTable />
       <SubscribeSection />
       <Footer />
-    </main>
+    </>
   );
 };
 

@@ -15,6 +15,11 @@ export default {
         hostname: "gameplus.com.tr",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.nvidiagrid.net",
+        pathname: "/**",
+      },
     ],
   },
 };

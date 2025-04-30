@@ -7,8 +7,9 @@ import RegisterForm from "../../molecules/RegisterForm/RegisterForm";
 import H2 from "../../atoms/H2/H2";
 import { Form, Formik } from "formik";
 import { LinkButton } from "../../atoms/Button/Button";
-import { redirect } from "next/navigation";
 import { registerFirebase } from "../../../../../firebase/auth";
+import { useRouter } from "next/navigation";
+
 const RegisterSchema = Yup.object().shape({
   name: Yup.string()
     .min(1, "Ad geçerli uzunlukta değildir.")
@@ -29,7 +30,9 @@ const RegisterSchema = Yup.object().shape({
     .required("Şifre alanı zorunludur."),
   user: Yup.bool().required("Kullanıcı sözleşmesini onaylamak zorunludur."),
 });
+
 const RegisterModal = () => {
+  const router = useRouter();
   return (
     <Modal show={true} className="register-modal w-100 h-100 bg-dark ">
       <Modal.Header className="justify-content-between bg-black border-0 pt-3 pb-5 w-100">
@@ -45,7 +48,7 @@ const RegisterModal = () => {
           height="24"
           alt="game plus logo image"
           onClick={() => {
-            redirect("/");
+            router.push("/");
           }}
         />
       </Modal.Header>
@@ -71,7 +74,7 @@ const RegisterModal = () => {
             validationSchema={RegisterSchema}
             onSubmit={async (values) => {
               registerFirebase(values);
-              redirect("/");
+              router.push("/");
             }}
           >
             {({ errors, touched, isSubmitting, validateForm }) => (

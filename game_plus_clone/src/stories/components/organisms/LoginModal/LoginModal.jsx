@@ -1,6 +1,6 @@
 "use client";
 import "./style.scss";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import NextImage from "../../atoms/Img/NextImage";
@@ -12,21 +12,24 @@ import LoginForm from "../../molecules/LoginForm/LoginForm";
 import { loginFirebase } from "../../../../../firebase/auth";
 import { Toast } from "react-bootstrap";
 import { useState } from "react";
+
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
     .email("E-posta geçersizdir.")
     .required("E-posta alanı zorunludur."),
   password: Yup.string()
-    .min(2, "Şifre alanı en az 6 karakter olmalıdır.")
+    .min(6, "Şifre alanı en az 6 karakter olmalıdır.")
     .required("Şifre alanı zorunludur."),
 });
 
 const LoginModal = () => {
+  const router = useRouter();
   const [showToast, setShowToast] = useState(false);
   const handleToast = () => {
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
+
   return (
     <Modal show={true} className="login-modal w-100 h-100 bg-dark ">
       <Modal.Header className="justify-content-between bg-black border-0 pt-3 pb-5 w-100">
@@ -40,9 +43,9 @@ const LoginModal = () => {
           src="/images/close_icon.svg"
           width="24"
           height="24"
-          alt="game plus logo image"
+          alt="close icon"
           onClick={() => {
-            redirect("/");
+            router.push("/");
           }}
         />
       </Modal.Header>
@@ -64,7 +67,7 @@ const LoginModal = () => {
             Email veya şifre hatalı lütfen kontrol ediniz!
           </Toast.Body>
         </Toast>
-        <div className="login-card  mx-auto">
+        <div className="login-card mx-auto">
           <Formik
             initialValues={{
               email: "",
@@ -77,7 +80,7 @@ const LoginModal = () => {
                 values.password
               );
               console.log(isSuccess);
-              isSuccess ? redirect("/") : handleToast();
+              isSuccess ? router.push("/") : handleToast();
             }}
           >
             {({ errors, touched, isSubmitting, validateForm }) => (
@@ -98,7 +101,7 @@ const LoginModal = () => {
             text={"Üye Ol!"}
           />
 
-          <div className="border-opacity-25 border-top  border-light pt-4 mt-4">
+          <div className="border-opacity-25 border-top border-light pt-4 mt-4">
             <Button variant="outline-warning" className="w-100">
               Hızlı Giriş ile Giriş Yap
             </Button>

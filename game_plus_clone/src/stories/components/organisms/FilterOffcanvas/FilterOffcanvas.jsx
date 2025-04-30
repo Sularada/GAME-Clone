@@ -5,7 +5,8 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import NextImage from "../../atoms/Img/NextImage";
 import H2 from "../../atoms/H2/H2";
-import { Form } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+import H3 from "../../atoms/H3/H3";
 const FilterOffcanvas = () => {
   const [show, setShow] = useState(false);
 
@@ -14,7 +15,7 @@ const FilterOffcanvas = () => {
   return (
     <>
       <Button
-        className="d-flex gap-2 align-items-center d-lg-none bg-black border-0 w-100"
+        className="d-flex gap-2  d-lg-none bg-black border-0"
         onClick={handleShow}
       >
         <NextImage
@@ -23,11 +24,6 @@ const FilterOffcanvas = () => {
           height={24}
           alt={"filter icon svg"}
         />{" "}
-        <Form.Control
-          className="bg-dark border-0 text-light w-100 fs-5"
-          type="search"
-          placeholder="Oyun ismine göre ara"
-        />
       </Button>
 
       <Offcanvas
@@ -35,7 +31,7 @@ const FilterOffcanvas = () => {
         onHide={handleClose}
         responsive="lg"
         variant
-        className="mt-5  bg-black"
+        className=" bg-black filter-canvas"
       >
         <Offcanvas.Header className="gap-2">
           <NextImage
@@ -50,10 +46,77 @@ const FilterOffcanvas = () => {
             <H2 text={"Filtreler"} classes={"text-white fs-5 p-0 m-0"} />
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <p className="mb-0">
-            This is content within an <code>.offcanvas-lg</code>.
-          </p>
+        <Offcanvas.Body className="w-100">
+          <Accordion
+            defaultActiveKey={["0", "1"]}
+            flush
+            alwaysOpen
+            className="w-100"
+          >
+            <Accordion.Item eventKey="0" className="border-0 mb-3">
+              <Accordion.Header className="p-0">
+                <H3 text={"Platform"} classes="text-light fw-normal fs-5" />
+              </Accordion.Header>
+              <Accordion.Body>
+                {" "}
+                <div>
+                  <div>
+                    <label className="checkbox">
+                      <input
+                        type="checkbox"
+                        className="checkbox-input "
+                        name=""
+                        value="Steam"
+                      />
+                      <span className="text-white">Steam</span>
+                    </label>
+                  </div>
+                  <div>
+                    <label className="checkbox sc-eqIVtm hDqGEX">
+                      <input
+                        type="checkbox"
+                        className="checkbox-input text-white"
+                        name=""
+                        value="Epic Games"
+                      />
+                      <span className="text-white">Epic Games</span>
+                    </label>
+                  </div>
+                </div>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1" className="border-0">
+              <Accordion.Header className="p-0">
+                <H3 text={"Oyun türü"} classes="text-light fw-normal fs-5" />
+              </Accordion.Header>
+              <Accordion.Body>
+                <div>
+                  <div>
+                    <label className="checkbox">
+                      <input
+                        type="checkbox"
+                        className="checkbox-input "
+                        name=""
+                        value="Strateji"
+                      />
+                      <span className="text-white">Strateji</span>
+                    </label>
+                  </div>
+                  <div>
+                    <label className="checkbox sc-eqIVtm hDqGEX">
+                      <input
+                        type="checkbox"
+                        className="checkbox-input text-white"
+                        name=""
+                        value="Simülasyon"
+                      />
+                      <span className="text-white">Simülasyon</span>
+                    </label>
+                  </div>
+                </div>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </Offcanvas.Body>
       </Offcanvas>
     </>
