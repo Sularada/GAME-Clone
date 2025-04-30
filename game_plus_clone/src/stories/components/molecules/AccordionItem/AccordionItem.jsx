@@ -9,7 +9,6 @@ import {
 import { LinkButtonWithImg } from "../../atoms/Button/Button";
 
 const AccordionItemComp = ({ eventKey, title, links }) => {
-  console.log(title, links);
   return (
     <AccordionItem eventKey={eventKey} className="bg-black">
       <AccordionHeader className="bg-black">{title}</AccordionHeader>
@@ -35,5 +34,22 @@ const AccordionItemComp = ({ eventKey, title, links }) => {
     </AccordionItem>
   );
 };
-
+export const FilterAccordionItem = ({ eventKey, title }) => {
+  return (
+    <AccordionItem eventKey={eventKey} className="bg-black">
+      <AccordionHeader className="bg-black">{title}</AccordionHeader>
+      <AccordionBody>
+        <div className="d-flex">
+          <Form.Check
+            inline
+            label="1"
+            name="group1"
+            type={type}
+            id={`inline-${type}-1`}
+          />
+        </div>
+      </AccordionBody>
+    </AccordionItem>
+  );
+};
 export default AccordionItemComp;

@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import Image from "next/image";
 import { Button, Col, Row } from "react-bootstrap";
 import H2 from "../../atoms/H2/H2";
 import NextImage from "../../atoms/Img/NextImage";

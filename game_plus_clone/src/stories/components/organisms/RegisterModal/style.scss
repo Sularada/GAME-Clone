@@ -1,0 +1,27 @@
+.register-modal {
+  .modal-header {
+    height: 141px;
+  }
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+    .modal-content {
+      border-radius: 0;
+      background-color: black;
+      .modal-body {
+        .register-card {
+          max-width: 480px;
+
+          border-radius: 8px;
+          .form-control {
+            background-color: #1e1e1e !important;
+          }
+          @media (min-width: 768px) {
+            background-color: #1e1e1e;
+            padding: 40px;
+          }
+        }
+      }
+    }
+  }
+}

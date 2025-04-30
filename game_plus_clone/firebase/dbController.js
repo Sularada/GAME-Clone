@@ -65,3 +65,12 @@ export async function getNestedSection(main, arr) {
   const sections = results.flat();
   return sections;
 }
+
+export async function getGames() {
+  const querySnapshot = await getDocs(collection(db, "games"));
+  const games = querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+  return games;
+}

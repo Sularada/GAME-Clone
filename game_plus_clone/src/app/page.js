@@ -5,6 +5,7 @@ import {
   getSection,
 } from "../../firebase/dbController";
 import GfnTemplate from "@/stories/components/templates/GfnTemplate/GfnTemplate";
+import { auth } from "../../firebase/firebase";
 export default async function Home() {
   const navlinks = await getnavbarSection("navlinks");
   const geforce = await getnavbarSection("GeForceNow");
@@ -19,6 +20,7 @@ export default async function Home() {
   ]);
   const geForceSection = await getSection("geForceNowSection");
   const gameCatalog = await getSection("gameCatalog");
+  console.log(auth.currentUser);
   return (
     <GfnTemplate
       navlinks={navlinks}
