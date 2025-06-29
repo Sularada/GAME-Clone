@@ -1,4 +1,11 @@
 @import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+:root {
+  --secondary: rgb(102, 102, 102);
+  --primary: rgb(118, 185, 0);
+  --light: rgb(178, 178, 178);
+  --warning: rgb(255, 201, 0);
+  --dark: #0d0d0d;
+}
 $off-canvas-menu-bg: #0d0d0d;
 * {
   box-sizing: border-box;

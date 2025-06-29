@@ -2,9 +2,32 @@
   transform: rotate(-90deg);
 }
 .filter-canvas {
-  width: 200px;
-
+  width: 340px;
+  .accordion {
+    border: none;
+    &:hover,
+    &:focus,
+    &:active {
+      border: none;
+    }
+  }
   .accordion-button {
     padding: 0;
+    border: none;
+    &:hover,
+    &:focus,
+    &:active {
+      border: none;
+    }
+  }
+  .accordion-item {
+    border: none !important;
+  }
+  .accordion-button {
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .accordion-button:not(.collapsed) {
+    box-shadow: none !important;
   }
 }

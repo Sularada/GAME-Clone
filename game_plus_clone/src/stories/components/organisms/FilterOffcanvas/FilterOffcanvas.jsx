@@ -7,11 +7,30 @@ import NextImage from "../../atoms/Img/NextImage";
 import H2 from "../../atoms/H2/H2";
 import Accordion from "react-bootstrap/Accordion";
 import H3 from "../../atoms/H3/H3";
+import { FilterAccordionItem } from "../../molecules/AccordionItem/AccordionItem";
 const FilterOffcanvas = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const filters = [
+    {
+      title: "Platform",
+      eventKey: "1",
+      items: [
+        { label: "Stream", value: "stream" },
+        { label: "Epic Games", value: "epic-games" },
+      ],
+    },
+    {
+      title: "Oyun Türü",
+      eventKey: "2",
+      items: [
+        { label: "Strateji", value: "strateji" },
+        { label: "Simülasyon", value: "simulasyon" },
+      ],
+    },
+  ];
   return (
     <>
       <Button
@@ -53,69 +72,21 @@ const FilterOffcanvas = () => {
             alwaysOpen
             className="w-100"
           >
-            <Accordion.Item eventKey="0" className="border-0 mb-3">
-              <Accordion.Header className="p-0">
-                <H3 text={"Platform"} classes="text-light fw-normal fs-5" />
-              </Accordion.Header>
-              <Accordion.Body>
-                {" "}
-                <div>
-                  <div>
-                    <label className="checkbox">
-                      <input
-                        type="checkbox"
-                        className="checkbox-input "
-                        name=""
-                        value="Steam"
-                      />
-                      <span className="text-white">Steam</span>
-                    </label>
-                  </div>
-                  <div>
-                    <label className="checkbox sc-eqIVtm hDqGEX">
-                      <input
-                        type="checkbox"
-                        className="checkbox-input text-white"
-                        name=""
-                        value="Epic Games"
-                      />
-                      <span className="text-white">Epic Games</span>
-                    </label>
-                  </div>
-                </div>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1" className="border-0">
-              <Accordion.Header className="p-0">
-                <H3 text={"Oyun türü"} classes="text-light fw-normal fs-5" />
-              </Accordion.Header>
-              <Accordion.Body>
-                <div>
-                  <div>
-                    <label className="checkbox">
-                      <input
-                        type="checkbox"
-                        className="checkbox-input "
-                        name=""
-                        value="Strateji"
-                      />
-                      <span className="text-white">Strateji</span>
-                    </label>
-                  </div>
-                  <div>
-                    <label className="checkbox sc-eqIVtm hDqGEX">
-                      <input
-                        type="checkbox"
-                        className="checkbox-input text-white"
-                        name=""
-                        value="Simülasyon"
-                      />
-                      <span className="text-white">Simülasyon</span>
-                    </label>
-                  </div>
-                </div>
-              </Accordion.Body>
-            </Accordion.Item>
+            <H2
+              text={"Filtreler"}
+              classes={
+                "text-white fs-5 fw-normal p-0 mt-2 mb-5 d-none d-lg-block"
+              }
+            />
+            {filters.map((filter) => {
+              return (
+                <FilterAccordionItem
+                  eventKey={filter.eventKey}
+                  title={filter.title}
+                  items={filter.items}
+                />
+              );
+            })}
           </Accordion>
         </Offcanvas.Body>
       </Offcanvas>

@@ -1,0 +1,20 @@
+.link-item {
+  font-weight: 500;
+  min-width: 200px;
+  text-align: center;
+}
+
+.navbar-link {
+  color: var(--secondary);
+  &:hover {
+    color: var(--light);
+  }
+}
+.icon-link {
+  width: fit-content;
+  border-radius: 8px;
+  &:hover,
+  &:active {
+    border: 1px solid var(--warning);
+  }
+}

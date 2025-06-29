@@ -4,6 +4,23 @@
   }
 }
 
-.link-btn {
+.nav-link {
   padding: 11px 50px;
+  color: rgb(102, 102, 102);
+  &:hover {
+    color: rgb(178, 178, 178);
+  }
+  &.active {
+    color: var(--primary);
+  }
+}
+.login-btn {
+  padding: 12px;
+  width: 174px;
+}
+
+.custom-btn {
+  min-width: 200px;
+  height: 48px;
+  font-weight: bold;
 }

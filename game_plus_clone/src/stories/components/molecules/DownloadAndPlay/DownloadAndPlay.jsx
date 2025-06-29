@@ -1,8 +1,8 @@
 import "./style.scss";
 import H2 from "../../atoms/H2/H2";
 import NextImage from "../../atoms/Img/NextImage";
-import { LinkButton } from "../../atoms/Button/Button";
 import { Col, Row } from "react-bootstrap";
+import Link from "../../atoms/Link/Link";
 
 const DownloadAndPlay = ({ data }) => {
   return (
@@ -16,9 +16,9 @@ const DownloadAndPlay = ({ data }) => {
           className="bg-image z-0"
         />
         <H2 text={data.title} classes="text-light" />
-        <LinkButton
+        <Link
           href={data.btn_link}
-          classes="btn-outline-primary z-2 position-relative"
+          classes="btn btn-outline-primary z-2 position-relative justify-content-center"
           text={data.btn_text}
         />
       </Col>

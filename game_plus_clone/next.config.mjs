@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-
-// export default nextConfig;
-export default {
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -22,4 +19,17 @@ export default {
       },
     ],
   },
+
+  // Fast Refresh loop'unu azaltmak için burası önemli!
+  webpackDevMiddleware: (config) => {
+    config.watchOptions = {
+      // node_modules klasörünü izleme
+      ignored: /node_modules/,
+      // Değişiklikleri algılamak için 1 saniyede bir kontrol et
+      poll: 1000,
+    };
+    return config;
+  },
 };
+
+export default nextConfig;
