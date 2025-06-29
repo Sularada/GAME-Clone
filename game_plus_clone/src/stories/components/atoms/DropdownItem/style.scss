@@ -1,0 +1,11 @@
+.dr-item {
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+  }
+
+  a {
+    line-height: 2.19;
+  }
+}
