@@ -63,14 +63,6 @@ export const FilterAccordionItem = ({ eventKey, title, type, items }) => {
                   {item.label}
                 </Form.Check.Label>
               </Form.Check>
-              {/* <Form.Check
-                className="text-light fw-medium"
-                inline
-                label={item.label}
-                value={item.value}
-                type={type}
-                id={`inline-${type}-1`}
-              /> */}
             </div>
           );
         })}

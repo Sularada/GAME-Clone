@@ -1,4 +1,30 @@
 .gift {
   margin-bottom: 40px;
   text-align: center;
+  background: url(https://gameplus.com.tr/assets/images/nvidia-gift-bg.webp) 0%
+    0% / 140px no-repeat;
+  .gift-btn {
+    width: 260px;
+    justify-content: center;
+    height: 48px;
+  }
+  &::after {
+    content: "";
+    background: url(https://gameplus.com.tr/assets/images/nvidia-gift-bg.webp)
+      right center / 140px no-repeat;
+    width: 140px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .gift {
+    background-image: none;
+    margin-bottom: 40px;
+    &::after {
+      content: none;
+    }
+  }
 }
