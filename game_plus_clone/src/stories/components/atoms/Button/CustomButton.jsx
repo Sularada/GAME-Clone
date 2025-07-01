@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import "./style.scss";
 
 const CustomButton = ({
-  text = "Button",
+  text = "",
   classes = "",
   icon = "",
   isOutline = false,

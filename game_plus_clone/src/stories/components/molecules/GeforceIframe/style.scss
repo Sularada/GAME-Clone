@@ -1,0 +1,24 @@
+.iframe-container {
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    i {
+      color: white;
+      font-size: 40px;
+      margin-bottom: 1px;
+    }
+  }
+  background-image: url("https://gameplus.com.tr/static/media/thumbnail.89afec5d.webp");
+  max-width: 800px;
+  width: 100%;
+  height: 400px;
+  min-height: 100%;
+  border-radius: 4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
