@@ -2,4 +2,18 @@
   .top-icon {
     font-size: 50px;
   }
+  .info-card-link {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-style: solid;
+      border-color: rgb(118, 185, 0);
+      border-width: 0px 2px 2px 0px;
+      padding: 1px;
+      transform: rotate(-45deg);
+      margin-left: 5px;
+    }
+  }
 }

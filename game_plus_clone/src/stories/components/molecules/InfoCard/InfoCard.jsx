@@ -1,7 +1,7 @@
 import "./style.scss";
-import Link from "next/link";
 import H4 from "../../atoms/H4/H4";
 import P from "../../atoms/P/P";
+import Link from "../../atoms/Link/Link";
 
 const InfoCard = ({ info }) => {
   return (
@@ -15,10 +15,9 @@ const InfoCard = ({ info }) => {
       <P text={info.text} classes="text-center text-light" />
       <Link
         href={info.link}
-        className="text-primary text-center text-decoration-none d-block"
-      >
-        {info.link_text} <i className={info.link_icon_class}></i>{" "}
-      </Link>
+        classes="text-primary justify-content-center info-card-link"
+        text={info.link_text}
+      />
     </div>
   );
 };
