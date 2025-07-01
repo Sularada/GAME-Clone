@@ -1,0 +1,44 @@
+.game-card {
+  max-width: 234px;
+  min-width: 150px;
+  .game-card-top {
+    a {
+      z-index: 2;
+      width: fit-content;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: bottom 0.2s ease-in-out;
+      img {
+        height: 12px;
+        width: 9px;
+      }
+    }
+  }
+  .card-body {
+    z-index: 3;
+    background-color: black;
+  }
+  &:hover {
+    .game-card-top {
+      .card-img {
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0; // top: 0; right: 0; bottom: 0; left: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.5) 100%
+          );
+          z-index: 1;
+          pointer-events: none;
+        }
+      }
+      a {
+        animation: linkAnimation 0.5s ease-in-out;
+        bottom: 20px;
+      }
+    }
+  }
+}
