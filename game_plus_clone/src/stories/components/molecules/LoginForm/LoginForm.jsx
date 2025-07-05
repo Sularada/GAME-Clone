@@ -40,7 +40,7 @@ const LoginForm = ({ errors, touched, isSubmitting }) => {
 
       <div className=" d-flex justify-content-between align-items-center mb-3">
         <Form.Check
-          className="checkbox"
+          className="login-checkbox"
           inline
           type="checkbox"
           id="rememberInput"
