@@ -1,44 +1,53 @@
-import { LinkButton } from "../../atoms/Button/Button";
-import NextImage from "../../atoms/Img/NextImage";
+"use client";
+
+import "./style.scss";
+import Link from "../../atoms/Link/Link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const isActive = (path) => (pathname === path ? "active" : "");
+
   return (
-    <div className="d-none d-lg-flex justify-content-between py-3 w-100 ms-auto">
+    <div className="navbar-comp d-none d-lg-flex justify-content-between py-3 w-100 ms-auto">
       <div className="d-flex align-items-center">
-        <NextImage
-          src={
+        <Link
+          href="/"
+          classes={`navbar-link mr-21 p-0 ${isActive("/")}`}
+          leftIcon={
             "https://gameplus.com.tr/static/media/logo-desktop-dark@2x.0f3b6d94.webp"
           }
-          width={214}
-          height={40}
-          alt={"geforce logo"}
+          iconWidth={214}
+          iconHeight={40}
         />
-        <LinkButton
-          classes={"nav-link px-2"}
-          href={"/oyunlar"}
-          text={"Oyunlar"}
+        <Link
+          classes={`nav-link mr-21 p-0 ${isActive("/oyunlar")}`}
+          href="/oyunlar"
+          text="Oyunlar"
         />
-        <LinkButton
-          classes={"nav-link px-2"}
-          href={"/paketler"}
-          text={"Paketler"}
+        <Link
+          classes={`nav-link mr-21 p-0 ${isActive("/paketler")}`}
+          href="/paketler"
+          text="Paketler"
         />
-        <LinkButton
-          classes={"nav-link px-2"}
-          href={"/indir-ve-oyna"}
-          text={"İndir ve Oyna"}
+        <Link
+          classes={`nav-link mr-21 p-0 ${isActive("/indir-ve-oyna")}`}
+          href="/indir-ve-oyna"
+          text="İndir ve Oyna"
         />
-        <LinkButton
-          classes={"nav-link px-2"}
-          href={"/geforce-now-nedir"}
-          text={"Nasıl Çalışır?"}
+        <Link
+          classes={`nav-link mr-21 p-0 ${isActive("/geforce-now-nedir")}`}
+          href="/geforce-now-nedir"
+          text="Nasıl Çalışır?"
         />
       </div>
       <div>
-        <LinkButton
-          classes={"btn-outline-primary fw-bold login-btn"}
-          href={"/giris"}
-          text={"Giriş Yap"}
+        <Link
+          classes={`btn btn-outline-primary d-flex justify-content-center fw-bold login-btn ${isActive(
+            "/giris"
+          )}`}
+          href="/giris"
+          text="Giriş Yap"
         />
       </div>
     </div>

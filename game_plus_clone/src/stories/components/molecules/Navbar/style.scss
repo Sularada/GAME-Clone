@@ -1,0 +1,14 @@
+.navbar-comp {
+  .mr-21 {
+    margin-right: 21px;
+  }
+  .navlink {
+    &.active {
+      color: var(--primary);
+    }
+  }
+  .login-btn {
+    min-width: 200px;
+    height: 48px;
+  }
+}
