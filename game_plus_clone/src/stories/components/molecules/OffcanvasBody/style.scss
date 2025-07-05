@@ -1,4 +1,27 @@
-.socials {
-  gap: 10px;
-  margin: 34px 0 20px 0;
+.canvas-body {
+  max-width: 200px;
+  .canvas-nav {
+    border-bottom: 1px solid rgb(41, 41, 43);
+    padding-bottom: 35px;
+  }
+  .socials {
+    gap: 10px;
+    margin: 34px 0 20px 0;
+  }
+  .sub-menus {
+    padding: 40px 0;
+    border-bottom: 1px solid rgb(41, 41, 43);
+  }
+}
+@media screen and (max-width: 1210px) {
+  .canvas-body {
+    min-width: 316px;
+    .canvas-nav {
+      border-bottom: none;
+    }
+    .sub-menus {
+      padding: 0;
+      border-bottom: none;
+    }
+  }
 }

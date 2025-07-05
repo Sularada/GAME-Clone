@@ -12,6 +12,7 @@
 .icon-link {
   width: fit-content;
   border-radius: 8px;
+  border: 1px solid transparent;
   &:hover,
   &:active {
     border: 1px solid var(--warning);

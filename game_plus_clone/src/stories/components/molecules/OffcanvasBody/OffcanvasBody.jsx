@@ -3,55 +3,80 @@ import { Nav, Offcanvas } from "react-bootstrap";
 import DropdownSubMenu from "../../organisms/DropdownSubMenu/DropdownSubMenu";
 import GeForceNowSvg from "../../atoms/Svg/GeForceNowSvg";
 import UbisoftSvg from "../../atoms/Svg/UbisoftSvg";
-import Link from "next/link";
-import NextImage from "../../atoms/Img/NextImage";
-import NavLink from "../NavLink/NavLink";
+
+import Link from "../../atoms/Link/Link";
 
 const OffcanvasBody = ({ navlinks, geforce, ubisoft }) => {
   return (
-    <Offcanvas.Body className="ps-53 d-flex flex-column h-100">
-      <Nav className="d-flex flex-column gap-35 mb-35">
+    <Offcanvas.Body className="canvas-body  ps-53 align-items-start align-items-lg-center d-flex flex-column h-100">
+      <Nav className="canvas-nav d-flex flex-column gap-35 ">
         {navlinks.map((navlink) => {
-          return <NavLink key={navlink.id} navlink={navlink} />;
+          return (
+            <Link
+              key={navlink.id}
+              href={navlink.href}
+              text={navlink.text}
+              classes="navbar-link"
+              leftIcon={navlink.src}
+              iconHeight={navlink.height}
+              iconWidth={navlink.width}
+            />
+          );
         })}
       </Nav>
-      <DropdownSubMenu menu={geforce} svg={<GeForceNowSvg />} />
-      <DropdownSubMenu menu={ubisoft} svg={<UbisoftSvg />} />
+      <div className="sub-menus">
+        <Link
+          classes="icon-link d-none d-lg-block mb-3"
+          href="/"
+          iconHeight={78}
+          iconWidth={154}
+          leftIcon="/images/geforcenow_menu.webp"
+        />
+        <Link
+          classes="icon-link d-none d-lg-block mb-3"
+          href="https://gameplus.com.tr/ubisoft"
+          iconHeight={78}
+          iconWidth={154}
+          leftIcon="/images/ubisoft-menu.webp"
+        />
+        <DropdownSubMenu
+          classes="d-lg-none"
+          menu={geforce}
+          svg={<GeForceNowSvg />}
+        />
+        <DropdownSubMenu
+          classes="d-lg-none"
+          menu={ubisoft}
+          svg={<UbisoftSvg />}
+        />
+      </div>
       <div className="mt-auto">
-        <NavLink navlink={{ link: "/giris", text: "Giriş Yap" }} />
+        <Link
+          href={"/giris"}
+          text="Giriş Yap"
+          classes="d-lg-none text-secondary"
+        />
         <div className="socials d-flex justify-content-center">
-          <Link href="https://www.facebook.com/gfnbygameplus">
-            <NextImage
-              src="/images/facebook.svg"
-              width="24"
-              height="24"
-              alt="facebook image"
-            />
-          </Link>
-          <Link href="https://www.instagram.com/gfnbygameplus">
-            <NextImage
-              src="/images/instagram.svg"
-              width="24"
-              height="24"
-              alt="instagram image"
-            />
-          </Link>
-          <Link href="https://x.com/GFNbyGAMEPLUS">
-            <NextImage
-              src="/images/x.svg"
-              width="14"
-              height="19"
-              alt="x image"
-            />
-          </Link>
-          <Link href="https://www.youtube.com/channel/UCg_Ahh7orrjFKcQ2hUBI8Eg">
-            <NextImage
-              src="/images/youtube.svg"
-              width="24"
-              height="24"
-              alt="youtube image"
-            />
-          </Link>
+          <Link
+            classes="navbar-link"
+            href="https://www.facebook.com/gfnbygameplus"
+            leftIcon="/images/facebook.svg"
+          />
+          <Link
+            classes="navbar-link"
+            href="https://www.instagram.com/gfnbygameplus"
+            leftIcon="/images/instagram.svg"
+          />
+          <Link
+            classes="navbar-link"
+            href="https://x.com/GFNbyGAMEPLUS"
+            leftIcon="/images/x.svg"
+          />
+          <Link
+            classes="navbar-link"
+            href="https://www.youtube.com/channel/UCg_Ahh7orrjFKcQ2hUBI8Eg"
+            leftIcon="/images/youtube.svg"
+          />
         </div>
       </div>
     </Offcanvas.Body>
