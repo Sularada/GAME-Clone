@@ -1,57 +1,73 @@
 "use client";
-import { Button, FloatingLabel, FormCheck } from "react-bootstrap";
+import { Button, FloatingLabel, Form, FormCheck } from "react-bootstrap";
 import P from "../../atoms/P/P";
 import { Field } from "formik";
+import FloatingLabelWapper from "../FloatingLabelWrapper/FloatingLabelWapper";
+import TextInput from "../../atoms/Input/TextInput";
+import "./style.scss";
+import Link from "../../atoms/Link/Link";
+import CustomButton from "../../atoms/Button/CustomButton";
 
 const LoginForm = ({ errors, touched, isSubmitting }) => {
   return (
     <>
-      <FloatingLabel
-        controlId="emailInput"
-        label="Email"
-        className="mb-3 text-light"
-      >
-        <Field
-          type="email"
-          name="email"
-          className="form-control bg-dark text-light"
+      <div>
+        <FloatingLabelWapper
+          label="E-posta"
+          id="email"
+          children={
+            <>
+              <TextInput type="email" placeholder="E-posta" name="email" />
+            </>
+          }
         />
-        {errors.email && touched.email ? (
-          <div className="text-danger">{errors.email}</div>
-        ) : null}
-      </FloatingLabel>
-      <FloatingLabel
-        controlId="passwordInput"
-        label="Şifre"
-        className="text-light"
-      >
-        <Field
-          type="password"
-          name="password"
-          className="form-control bg-dark text-light"
+      </div>
+      <div>
+        <FloatingLabelWapper
+          label="Şifre"
+          id="password"
+          children={
+            <>
+              <TextInput
+                type="password"
+                placeholder="E-posta"
+                name="password"
+              />
+            </>
+          }
         />
-        {errors.password && touched.password ? (
-          <div className="text-danger">{errors.password}</div>
-        ) : null}
-      </FloatingLabel>
-      <div className="mt-3 d-flex justify-content-between">
-        <FormCheck
+      </div>
+
+      <div className=" d-flex justify-content-between align-items-center mb-3">
+        <Form.Check
+          className="checkbox"
+          inline
           type="checkbox"
           id="rememberInput"
-          label="Beni Hatırla"
-          className="text-light "
-          defaultChecked={true}
+          variant="warning"
+        >
+          <Form.Check.Input
+            className="text-secondary  "
+            type="checkbox"
+            defaultChecked={true}
+          />
+          <Form.Check.Label className="text-light fw-medium">
+            Beni Hatırla
+          </Form.Check.Label>
+        </Form.Check>
+        <Link
+          href={""}
+          text={"Şifremi Unuttum"}
+          classes={"forget-password text-warning text-decoration-underline"}
         />
-        <P text={"Şifremi Unuttum"} classes={"text-warning"} />
       </div>
-      <Button
+      <CustomButton
         type="submit"
         variant="secondary"
-        className="w-100"
+        className="w-100 fw-bold login-btn"
         disabled={isSubmitting}
-      >
-        Giriş Yap
-      </Button>
+        text="Giriş Yap"
+      ></CustomButton>
     </>
   );
 };

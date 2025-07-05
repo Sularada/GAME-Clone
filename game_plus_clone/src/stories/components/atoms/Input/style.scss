@@ -1,0 +1,18 @@
+.form-control {
+  border-color: var(--secondary);
+  background-color: #1e1e1e;
+  &:focus,
+  &:active,
+  &:hover {
+    border-color: var(--secondary);
+    box-shadow: none;
+    background-color: #1e1e1e;
+  }
+}
+.invalid-feedback {
+  position: absolute;
+  font-size: 12px;
+  margin: 0;
+  font-weight: 500;
+  bottom: -20px;
+}

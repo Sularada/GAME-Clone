@@ -1,0 +1,28 @@
+.checkbox {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  margin-right: 4px;
+  input {
+    height: 24px;
+    width: 24px;
+    border: 2px solid var(--secondary);
+    &:checked {
+      border-color: var(--warning);
+      background-color: var(--warning);
+    }
+    &:focus {
+      box-shadow: none;
+      border-color: var(--warning);
+    }
+  }
+  label {
+    font-weight: 600;
+  }
+}
+.forget-password {
+  font-size: 14px;
+}
+.login-btn {
+  height: 48px;
+}
